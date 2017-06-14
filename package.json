@@ -1,0 +1,26 @@
+{
+  "name": "homekit-outlets",
+  "version": "1.0.0",
+  "description": "A self-contained HomeKit server for interacting with wireless remote control electrical outlet switches over radio frequency and HTTP.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homekit",
+    "automation",
+    "homebridge",
+    "homebridge-server",
+    "hap",
+    "smart",
+    "iot",
+    "javascript"
+  ],
+  "author": "Trent Rand <contact@trentrand.com>",
+  "license": "ISC",
+  "dependencies": {
+    "homebridge": "^0.4.20"
+  },
+  "devDependencies": {
+  }
+}
