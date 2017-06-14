@@ -1,7 +1,7 @@
 {
   "name": "homekit-outlets",
   "version": "1.0.0",
-  "description": "A self-contained HomeKit server for interacting with wireless remote control electrical outlet switches over radio frequency and HTTP.",
+  "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

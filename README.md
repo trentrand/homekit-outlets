@@ -1,2 +1,2 @@
 # HomeKit Controlled Outlet Switches
-> A self-contained HomeKit server for interacting with wireless remote control electrical outlet switches over radio frequency and HTTP.
+> Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency

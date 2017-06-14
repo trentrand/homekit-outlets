@@ -5,7 +5,7 @@
     "port": 51826,
     "pin": "380-81-301"
   },
-  "description": "A self-contained HomeKit server for interacting with wireless remote control electrical outlet switches over radio frequency and HTTP.",
+  "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "accessories": [],
   "platforms": []
 }
