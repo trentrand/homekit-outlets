@@ -22,5 +22,10 @@
     "homebridge": "^0.4.20"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-uglify": "^3.0.0"
   }
 }
