@@ -23,6 +23,11 @@ var Config = (function () {
 var OutletAccessory = (function () {
     function OutletAccessory(log, config) {
         var _this = this;
+        // Get the power state of this outlet
+        this.getPowerState = function (callback) {
+            _this.log('Power state for ' + _this.config.name + ' is ' + _this.powerState);
+            callback(null, _this.powerState);
+        };
         // Set the power state of this outlet
         this.setPowerState = function (powerState, callback) {
             _this.powerState = powerState;
@@ -42,6 +47,7 @@ var OutletAccessory = (function () {
                 outletService = new Service.Lightbulb(_this.config.name);
                 // Bind state value to required Lightbulb charactertisics
                 outletService.getCharacteristic(Characteristic.On)
+                    .on('get', _this.getPowerState.bind(_this))
                     .on('set', _this.setPowerState.bind(_this));
             }
             var informationService = new Service.AccessoryInformation()

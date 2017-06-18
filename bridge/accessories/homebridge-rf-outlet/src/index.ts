@@ -46,6 +46,12 @@ class OutletAccessory {
     this.log("Starting device " + this.config.name + "...");
   }
 
+  // Get the power state of this outlet
+  getPowerState = (callback: any) => {
+    this.log('Power state for ' + this.config.name + ' is ' + this.powerState);
+    callback(null, this.powerState);
+  }
+
   // Set the power state of this outlet
   setPowerState = (powerState: boolean, callback: any) => {
       this.powerState = powerState;
@@ -67,6 +73,7 @@ class OutletAccessory {
       outletService = new Service.Lightbulb(this.config.name);
       // Bind state value to required Lightbulb charactertisics
       outletService.getCharacteristic(Characteristic.On)
+        .on('get', this.getPowerState.bind(this))
         .on('set', this.setPowerState.bind(this));
     }
 
