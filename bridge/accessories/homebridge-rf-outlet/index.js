@@ -24,9 +24,10 @@ var OutletAccessory = (function () {
     function OutletAccessory(log, config) {
         var _this = this;
         // Set the power state of this outlet
-        this.setPowerState = function (powerStateOn, callback) {
-            var state = powerStateOn ? "on" : "off";
-            _this.log("Turning " + _this.config.name + " " + state);
+        this.setPowerState = function (powerState, callback) {
+            _this.powerState = powerState;
+            _this.log("Turning " + _this.config.name + " " + (_this.powerState == true ? "on" : "off"));
+            callback(null);
         };
         // React to the 'identify' HAP-NodeJS Accessory request
         // https://github.com/KhaosT/HAP-NodeJS/blob/master/lib/Accessory.js#L32-L38
@@ -39,11 +40,11 @@ var OutletAccessory = (function () {
             var outletService;
             if (_this.config.type == "Light") {
                 outletService = new Service.Lightbulb(_this.config.name);
+                // Bind state value to required Lightbulb charactertisics
+                outletService.getCharacteristic(Characteristic.On)
+                    .on('set', _this.setPowerState.bind(_this));
             }
-            outletService.getCharacteristic(Characteristic.On)
-                .on('set', _this.setPowerState.bind(_this));
-            var informationService = new Service.AccessoryInformation();
-            informationService
+            var informationService = new Service.AccessoryInformation()
                 .setCharacteristic(Characteristic.Manufacturer, _this.config.manufacturer)
                 .setCharacteristic(Characteristic.Model, _this.config.model)
                 .setCharacteristic(Characteristic.SerialNumber, _this.config.serial);
@@ -51,6 +52,8 @@ var OutletAccessory = (function () {
         };
         // Register accessory information
         this.config = config;
+        // Register accessory default power state as 'off'
+        this.powerState = false;
         this.log = log;
         this.log("Starting device " + this.config.name + "...");
     }

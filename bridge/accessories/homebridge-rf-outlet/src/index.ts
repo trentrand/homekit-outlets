@@ -33,19 +33,24 @@ class Config {
 class OutletAccessory {
   log: (message: any) => void;
   config: Config;
+  powerState: boolean;
 
   constructor(log: (message: any) => void, config: Config) {
     // Register accessory information
     this.config = config;
+
+    // Register accessory default power state as 'off'
+    this.powerState = false;
 
     this.log = log;
     this.log("Starting device " + this.config.name + "...");
   }
 
   // Set the power state of this outlet
-  setPowerState = (powerStateOn: "on" | "off", callback: any) => {
-      var state = powerStateOn ? "on" : "off";
-      this.log("Turning " + this.config.name + " " + state);
+  setPowerState = (powerState: boolean, callback: any) => {
+      this.powerState = powerState;
+      this.log("Turning " + this.config.name + " " + (this.powerState == true ? "on" : "off"));
+      callback(null);
   }
 
   // React to the 'identify' HAP-NodeJS Accessory request
@@ -58,17 +63,14 @@ class OutletAccessory {
   // Register this outlets required (and optional) services
   getServices = () => {
     var outletService;
-
     if (this.config.type == "Light")  {
       outletService = new Service.Lightbulb(this.config.name);
+      // Bind state value to required Lightbulb charactertisics
+      outletService.getCharacteristic(Characteristic.On)
+        .on('set', this.setPowerState.bind(this));
     }
 
-    outletService.getCharacteristic(Characteristic.On)
-      .on('set', this.setPowerState.bind(this));
-
-    var informationService = new Service.AccessoryInformation();
-
-    informationService
+    var informationService = new Service.AccessoryInformation()
       .setCharacteristic(Characteristic.Manufacturer, this.config.manufacturer)
       .setCharacteristic(Characteristic.Model, this.config.model)
       .setCharacteristic(Characteristic.SerialNumber, this.config.serial);
