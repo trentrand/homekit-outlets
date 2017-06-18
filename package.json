@@ -4,6 +4,7 @@
   "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
+    "preinstall": "git submodule init && git submodule update",
     "install": "gulp build",
     "start": "gulp run",
     "test": "echo \"Error: no test specified\" && exit 1",
