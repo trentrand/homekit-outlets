@@ -1,0 +1,22 @@
+{
+  "bridge": {
+    "name": "Outlet Bridge",
+    "username": "FC:10:A7:DD:90:B5",
+    "port": 51826,
+    "pin": "380-81-301"
+  },
+  "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
+  "accessories": [
+    {
+      "accessory": "Outlet",
+      "name": "Bedroom Lamp",
+      "type": "Light",
+      "manufacturer": "Ikea",
+      "model": "SKEBY Lamp",
+      "serial": "",
+      "rf_on": 4480259,
+      "rf_off": 4480268
+    }
+  ],
+  "platforms": []
+}
