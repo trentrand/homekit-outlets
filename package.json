@@ -4,7 +4,7 @@
   "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
-    "install": "gulp build && cd ./bridge/accessories/homebridge-rf-outlet/ && gulp && cd ../../../",
+    "install": "gulp build",
     "start": "gulp run",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEBUG=* homebridge -D -P ./bridge/accessories/ || true"
@@ -29,6 +29,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-exec": "^2.1.3",
+    "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.6.3",
     "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^3.0.0"

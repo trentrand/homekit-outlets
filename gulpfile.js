@@ -7,6 +7,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var exec = require('gulp-exec');
+var rename = require("gulp-rename");
 
 var homeDir = require('os').homedir();
 var scripts = [];
@@ -22,7 +23,7 @@ var config = {
 };
 
 var accessories = {
-  src: ['./bridge/accessories/outlet.accessory.js'],
+  src: ['./bridge/accessories/homebridge-rf-outlet/index.js'],
   dest: homeDir + '/.homebridge/accessories/'
 }
 
@@ -38,15 +39,9 @@ gulp.task('copy-config', ['clean'], function() {
     .pipe(gulp.dest(config.dest));
 });
 
-gulp.task('build-accessories', ['clean'], function() {
-  var exec = require('child_process').exec;
-  process.chdir('./bridge/accessories/');
-  exec('gulp');
-  process.chdir('../../');
-});
-
 gulp.task('copy-accessories', ['clean'], function() {
   return gulp.src(accessories.src)
+    .pipe(rename('homebridge-rf-outlet.js'))
     .pipe(gulp.dest(accessories.dest));
 })
 
@@ -72,7 +67,7 @@ gulp.task('watch', function() {
   gulp.watch(scripts, ['']);
 });
 
-gulp.task('build', ['stop-homebridge', 'copy-config', 'build-accessories', 'copy-accessories']);
+gulp.task('build', ['stop-homebridge', 'copy-config', 'copy-accessories']);
 
 gulp.task('debug', ['debug-homebridge', 'watch']);
 

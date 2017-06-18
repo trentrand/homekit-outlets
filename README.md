@@ -7,11 +7,6 @@ After installing homebridge globally, install your HomeKit outlets server with
 
 `npm install`
 
-###### Install Details
-This will run the build task in this directories gulpfile, then change current working directory to  `./bridge/accessories/homebridge-rf-outlet/` and run it's gulpfile.
-
-The `homebridge-rf-outlet/` gulpfile compiles the TypeScript source to Javascript.
-
 ## Run
 
 After completing the [Install](#install) dependency task, start your HomeKit server with
