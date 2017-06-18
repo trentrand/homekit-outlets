@@ -31,7 +31,7 @@ Add one accessory to your `config.json` for each individual radio frequency powe
   "accessories": [
     {
       "accessory": "Outlet",
-      "name": "Bedroom Lamp",
+      "name": "Lamp",
       "type": "Light",
       "manufacturer": "Ikea",
       "model": "SKEBY Lamp",
