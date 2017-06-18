@@ -2,6 +2,11 @@
 
 This is an accessory plugin for [Homebridge](https://github.com/nfarina/homebridge) providing an interface to manage and control radio frequency (433 Mhz by default) power outlets.
 
+## Example (standalone) usage
+
+If you want to control your outlets with minimal setup requirements, check out [homekit-outlets](https://github.com/trentrand/homekit-outlets)
+> **homekit-outlets** is a standalone and easy-to-use [homebridge](https://github.com/nfarina/homebridge) implementation which will allow you to setup and control your radio-frequency power outlets from any iOS device with Siri or the Home application.
+
 ## Install
 
 After installing homebridge globally, install this plugin with
