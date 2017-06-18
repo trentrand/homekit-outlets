@@ -24,10 +24,13 @@
     "homebridge": "^0.4.20"
   },
   "devDependencies": {
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
+    "gulp-exec": "^2.1.3",
     "gulp-shell": "^0.6.3",
+    "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^3.0.0"
   }
 }
