@@ -4,7 +4,10 @@
   "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "gulp build && cd ./bridge/accessories/homebridge-rf-outlet/ && gulp && cd ../../../",
+    "start": "gulp run",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "DEBUG=* homebridge -D -P ./bridge/accessories/ || true"
   },
   "keywords": [
     "homekit",
@@ -13,8 +16,7 @@
     "homebridge-server",
     "hap",
     "smart",
-    "iot",
-    "javascript"
+    "iot"
   ],
   "author": "Trent Rand <contact@trentrand.com>",
   "license": "ISC",
