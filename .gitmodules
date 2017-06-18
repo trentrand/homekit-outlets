@@ -1,0 +1,3 @@
+[submodule "bridge/accessories/homebridge-rf-outlet"]
+	path = bridge/accessories/homebridge-rf-outlet
+	url = https://github.com/trentrand/homebridge-rf-outlet
