@@ -17,7 +17,8 @@ var isProduction = (process.env.NODE_ENV === 'production');
 var config = {
   example: './bridge/accessories/homebridge-rf-outlet/config-example.json',
   src: './bridge/config.json',
-  dest: homeDir + '/.homebridge/'
+  dest: homeDir + '/.homebridge/',
+  filePath: this.dest + 'config.json'
 };
 
 var accessories = {
@@ -29,7 +30,7 @@ var accessories = {
 var bridgeConfig = require(config.src).bridge;
 
 gulp.task('clean', ['stop-homebridge'], function() {
-  return gulp.src([config.dest, accessories.dest])
+  return gulp.src([config.filePath, accessories.dest])
     .pipe(clean({ force: true }));
 });
 
