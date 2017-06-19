@@ -12,8 +12,6 @@ var rename = require("gulp-rename");
 var homeDir = require('os').homedir();
 var scripts = [];
 
-var accessories = ['./homebridge-rf-outlet/'];
-
 var isProduction = (process.env.NODE_ENV === 'production');
 
 var config = {
@@ -23,6 +21,7 @@ var config = {
 };
 
 var accessories = {
+  filename: ['homebridge-rf-outlet.js'],
   src: ['./bridge/accessories/homebridge-rf-outlet/index.js'],
   dest: homeDir + '/.homebridge/accessories/'
 }
@@ -30,7 +29,7 @@ var accessories = {
 var bridgeConfig = require(config.src).bridge;
 
 gulp.task('clean', ['stop-homebridge'], function() {
-  return gulp.src(['./bridge/dist', config.dest])
+  return gulp.src([config.dest, accessories.dest])
     .pipe(clean({ force: true }));
 });
 
@@ -41,11 +40,11 @@ gulp.task('copy-config', ['clean'], function() {
 
 gulp.task('copy-accessories', ['clean'], function() {
   return gulp.src(accessories.src)
-    .pipe(rename('homebridge-rf-outlet.js'))
+    .pipe(rename(accessories.filename))
     .pipe(gulp.dest(accessories.dest));
 })
 
-gulp.task('debug-homebridge', ['copy-config'], function() {
+gulp.task('debug-homebridge', ['copy-config', 'copy-accessories'], function() {
   gulp.src('')
     .pipe(isProduction ? shell('homebridge') :
       shell('DEBUG=* homebridge -D -P ./bridge/accessories/'));
