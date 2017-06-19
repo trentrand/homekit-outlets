@@ -51,7 +51,7 @@ gulp.task('debug-homebridge', ['copy-config'], function() {
       shell('DEBUG=* homebridge -D -P ./bridge/accessories/'));
 });
 
-gulp.task('start-homebridge', ['copy-config'], function() {
+gulp.task('start-homebridge', ['stop-homebridge'], function() {
   gulp.src('')
     .pipe(isProduction ? shell('homebridge') :
       shell('homebridge -P ./bridge/accessories/'));
