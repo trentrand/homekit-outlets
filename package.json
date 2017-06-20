@@ -4,7 +4,8 @@
   "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
-    "preinstall": "git submodule init && git submodule update",
+    "install-wiringpi": "sudo apt-get install wiringpi",
+    "preinstall": "git submodule init && git submodule update && cd ./bridge/accessories/homebridge-rf-outlet/ && gulp",
     "install": "gulp build",
     "start": "gulp run",
     "test": "echo \"Error: no test specified\" && exit 1",
