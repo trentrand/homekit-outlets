@@ -4,9 +4,10 @@
   "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
-    "install-wiringpi": "sudo apt-get install wiringpi",
-    "preinstall": "git submodule init && git submodule update && cd ./bridge/accessories/homebridge-rf-outlet/ && gulp",
+    "install-globals": "sudo apt-get install wiringpi && npm npm install --global gulp-cli",
+    "preinstall": "git submodule init && git submodule update && cd ./bridge/accessories/homebridge-rf-outlet/ && npm install && gulp",
     "install": "gulp build",
+    "postinstall": "",
     "start": "gulp run",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEBUG=* homebridge -D -P ./bridge/accessories/ || true"

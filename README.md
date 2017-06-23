@@ -3,17 +3,25 @@
 
 ## Install
 
-After installing homebridge globally, install your HomeKit outlets server with
+Install homebridge globally by following this guide -
+
+Then install WiringPi and Gulp-CLI global dependencies with
+
+`npm run-script install-globals`
+
+Finally, install your HomeKit outlets server with
 
 `npm install`
 
 ## Run
 
-After completing the [Install](#install) dependency task, start your HomeKit server with
+After completing the [Install](#install) dependency tasks, start your HomeKit server with
 
 `npm start`
 
 Follow the on-screen instructions to pair your iOS device with the HomeKit server.
+
+This server must remain running for HomeKit to work. For this reason, we suggest serving it on a device like the Raspberry Pi 3.
 
 ## Configuration
 
