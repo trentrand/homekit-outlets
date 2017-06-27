@@ -1,6 +1,23 @@
 # HomeKit Controlled Outlet Switches
 > Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency
 
+## E2E Installation Guide:
+1. Install the Raspbian operting system on your raspberry pi (username: pi / password: raspberry) and plugin an ethernet cord from your Raspberry Pi to your router.
+2. Update apt-get package manager by executing `sudo apt-get update`
+3. Install git using apt-get by executing `sudo apt-get install git`. Along the way, you may be prompted to type [Y/n]; in which case, simply press the 'Y' key.
+4. Install Node by executing the following commands -
+```
+wget https://nodejs.org/dist/v6.9.5/node-v6.9.5-linux-armv6l.tar.xz
+tar xJvf node-v6.9.5-linux-armv6l.tar.xz
+sudo mkdir -p /opt/node
+sudo mv node-v6.9.5-linux-armv6l/* /opt/node/
+sudo update-alternatives --install "/usr/bin/node" "node" "/opt/node/bin/node" 1
+sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
+```
+5. Now that Node is installed, install homebridge by following the instructions listed on the following website, https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
+
+## Hardware Setup
+
 ## Install
 
 Install homebridge globally by following this guide -
@@ -12,6 +29,16 @@ Then install WiringPi and Gulp-CLI global dependencies with
 Finally, install your HomeKit outlets server with
 
 `npm install`
+
+## Setup your configuration file
+
+Before homekit-outlets can work, you must register your wireless outlet on/off radio frequency codes.
+
+To find out your outlet's on/off codes, make sure all outlets are paired to your controller, then follow the on-scren instructions presented to you after starting the pairing helper with
+
+`node ./pairing/get-started.js`
+
+Save your new pairing configuration by copy-and-pasting the provided configuration into this project's `config.json` file, making sure to overwrite `<<YOUR_CONFIG_HERE>>` with the provided configuration.
 
 ## Run
 
