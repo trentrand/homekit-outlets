@@ -1,15 +1,15 @@
 var fs = require('fs');
+var homeDir = require('os').homedir();
 
 // Gulp Plugins
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var shell = require('gulp-shell');
 var exec = require('gulp-exec');
 var rename = require("gulp-rename");
+var shell = require('gulp-shell');
+var uglify = require('gulp-uglify');
 
-var homeDir = require('os').homedir();
 var scripts = [];
 
 var isProduction = (process.env.NODE_ENV === 'production');

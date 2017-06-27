@@ -24,10 +24,11 @@
   "author": "Trent Rand <contact@trentrand.com>",
   "license": "ISC",
   "dependencies": {
-    "homebridge": "^0.4.20"
+    "fs": "0.0.1-security",
+    "homebridge": "^0.4.20",
+    "os": "^0.1.1"
   },
   "devDependencies": {
-    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
