@@ -59,7 +59,7 @@ gulp.task('start-homebridge', ['stop-homebridge'], function() {
 
 gulp.task('stop-homebridge', function() {
   gulp.src('')
-    .pipe(shell('if [[ $(lsof -P -ti :' + bridgeConfig.port + ') ]]; then kill $(lsof -P -ti :' + bridgeConfig.port + '); fi'));
+    .pipe(shell('#!/bin/bash; if [[ $(lsof -P -ti :' + bridgeConfig.port + ') ]]; then kill $(lsof -P -ti :' + bridgeConfig.port + '); fi'));
 });
 
 gulp.task('watch', function() {
