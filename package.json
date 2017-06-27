@@ -4,8 +4,7 @@
   "description": "Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency",
   "main": "",
   "scripts": {
-    "install-globals": "sudo apt-get install wiringpi && sudo apt-get install lsof && npm install -g typescript
-&& npm install --global gulp-cli",
+    "install-globals": "sudo apt-get install wiringpi && sudo apt-get install lsof && npm install -g typescript && npm install --global gulp-cli",
     "preinstall": "git submodule init && git submodule update && cd ./bridge/accessories/homebridge-rf-outlet/ && npm install && gulp",
     "install": "gulp build",
     "postinstall": "",
