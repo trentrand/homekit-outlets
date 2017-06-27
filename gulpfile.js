@@ -71,4 +71,4 @@ gulp.task('build', ['stop-homebridge', 'copy-config', 'copy-accessories']);
 
 gulp.task('debug', ['debug-homebridge', 'watch']);
 
-gulp.task('run', ['start-homebridge', 'watch']);
+gulp.task('default', ['start-homebridge', 'watch']);
