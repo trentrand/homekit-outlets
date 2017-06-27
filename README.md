@@ -5,7 +5,7 @@
 1. Install the Raspbian operting system on your raspberry pi (username: pi / password: raspberry) and plugin an ethernet cord from your Raspberry Pi to your router.
 2. Update apt-get package manager by executing `sudo apt-get update`
 3. Install git using apt-get by executing `sudo apt-get install git`. Along the way, you may be prompted to type [Y/n]; in which case, simply press the 'Y' key.
-4. Install Node by executing the following commands -
+4. Install Node (Raspberry Pi 3 / armv6l version) by executing the following commands -
 ```
 wget https://nodejs.org/dist/v6.9.5/node-v6.9.5-linux-armv6l.tar.xz
 tar xJvf node-v6.9.5-linux-armv6l.tar.xz
