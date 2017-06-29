@@ -26,8 +26,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "homebridge": "^0.4.20",
-    "os": "^0.1.1",
-    "rcswitch": "^0.3.1"
+    "os": "^0.1.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -38,6 +37,7 @@
     "gulp-shell": "^0.6.3",
     "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^3.0.0",
+    "rcswitch": "^0.3.1",
     "typescript": "^2.3.4"
   }
 }
