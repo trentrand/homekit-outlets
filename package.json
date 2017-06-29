@@ -8,7 +8,7 @@
     "preinstall": "git submodule init && git submodule update && cd ./bridge/accessories/homebridge-rf-outlet/",
     "install": "gulp build",
     "postinstall": "",
-    "start": "gulp run",
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEBUG=* homebridge -D -P ./bridge/accessories/ || true"
   },
@@ -37,7 +37,12 @@
     "gulp-shell": "^0.6.3",
     "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^3.0.0",
+<<<<<<< HEAD
     "rcswitch": "^0.3.1",
     "typescript": "^2.3.4"
+=======
+    "typescript": "^2.3.4",
+    "rcswitch": "^0.3.1"
+>>>>>>> 1af80eb939a3c462f30d86f9c297363d15b464b3
   }
 }
