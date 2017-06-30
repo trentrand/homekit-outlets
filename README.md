@@ -20,13 +20,11 @@ sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
 
 ## Install
 
-Install homebridge globally by following this guide -
-
-Then install WiringPi and Gulp-CLI global dependencies with
+Install global dependencies with
 
 `npm run-script install-globals`
 
-Finally, install your HomeKit outlets server with
+Then install your HomeKit outlets server with
 
 `npm install`
 
@@ -34,11 +32,9 @@ Finally, install your HomeKit outlets server with
 
 Before homekit-outlets can work, you must register your wireless outlet on/off radio frequency codes.
 
-To find out your outlet's on/off codes, make sure all outlets are paired to your controller, then follow the on-scren instructions presented to you after starting the pairing helper with
+To find out your outlet's on/off codes, make sure all outlets are paired to your controller, then follow the on-screen instructions presented to you after starting the pairing helper with
 
-`node ./pairing/get-started.js`
-
-Save your new pairing configuration by copy-and-pasting the provided configuration into this project's `config.json` file, making sure to overwrite `<<YOUR_CONFIG_HERE>>` with the provided configuration.
+  > Web app coming soon
 
 ## Run
 
@@ -79,6 +75,11 @@ Add one accessory to your `config.json` per each individual power outlet you'd l
   ],
   "platforms": []
 }
+
+```
+## Mounting Pi to filesystem
+```bash
+sshfs pi@homebridge.local:// /Mount -ovolname=Mount
 
 ```
 
