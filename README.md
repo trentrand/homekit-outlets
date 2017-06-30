@@ -69,8 +69,8 @@ Add one accessory to your `config.json` per each individual power outlet you'd l
       "manufacturer": "Ikea",
       "model": "SKEBY Lamp",
       "serial": "",
-      "rf_on": 4480259,
-      "rf_off": 4480268
+      "rf_on": 4265267,
+      "rf_off": 4265276
     }
   ],
   "platforms": []
