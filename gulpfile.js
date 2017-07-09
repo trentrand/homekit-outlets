@@ -13,12 +13,12 @@ var uglify = require('gulp-uglify');
 var scripts = [];
 
 var isProduction = (process.env.NODE_ENV === 'production');
-var homeDir = isProduction ? '/root' : require('os').homedir();
+var homeDir = require('os').homedir();
 
 var config = {
   example: './bridge/accessories/homebridge-rf-outlet/config-example.json',
   src: './bridge/config.json',
-  dest: homeDir + '/.homebridge/',
+  dest: isProduction ? '/var/lib/homebridge' : homeDir + '/.homebridge/',
   filePath: this.dest + 'config.json'
 }
 
@@ -57,7 +57,7 @@ gulp.task('debug-homebridge', ['copy-config', 'copy-accessories'], function() {
 gulp.task('start-homebridge', ['stop-homebridge'], function() {
   gulp.src('')
     .pipe(isProduction ? shell('homebridge') :
-      shell('homebridge -P ./bridge/accessories/'));
+      shell('homebridge'));
 });
 
 gulp.task('stop-homebridge', function() {
