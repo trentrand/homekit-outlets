@@ -16,34 +16,55 @@ sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
 ```
 5. Now that Node is installed, install homebridge by following the instructions listed on the following website, https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
 
-6. Setup homekit-outlets to run on startup by running,
+6. Setup homekit-outlets to run on startup by following these steps on your homebridge server -
+
+Add the following content to `homebridge` with,
+
+`sudo nano /etc/default/homebridge`
+
 ```
-sudo ln -fs /usr/bin/nodejs /usr/local/bin/node
-sudo touch /lib/systemd/system/homekit.service
+# Defaults / Configuration options for homebridge
+# The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)
+HOMEBRIDGE_OPTS=-U /var/lib/homebridge
+
+# If you uncomment the following line, homebridge will log more
+# You can display this via systemd's journalctl: journalctl -f -u homebridge
+# DEBUG=*
 ```
 
+Add the following content to `homebridge.service` with,
 
-Add the following content to `homekit.service` with,
-
-`sudo nano /lib/systemd/system/homekit.service`
+`sudo nano /etc/systemd/system/homebridge.service`
 
 ```
 [Unit]
-Description=HomeKit Outlet Server
+Description=Node.js HomeKit Server
+After=syslog.target network-online.target
 
 [Service]
-WorkingDirectory=/home/pi/developer/homekit-outlets
-ExecStart=/home/pi/.nvm/versions/node/v6.11.0/bin/npm start
-#Restart=on-failure
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=homekit-outlets
-User=root
-Group=root
-Environment=NODE_ENV=production
+Type=simple
+User=homebridge
+EnvironmentFile=/etc/default/homebridge
+# Adapt this to your specific setup (could be /usr/bin/homebridge)
+# See comments below for more information
+ExecStart=/home/pi/.nvm/versions/node/v6.11.0/bin/homebridge $HOMEBRIDGE_OPTS
+Restart=on-failure
+RestartSec=10
+KillMode=process
 
 [Install]
 WantedBy=multi-user.target
+```
+
+Then execute the following commands,
+```
+sudo useradd -M --system homebridge
+sudo mkdir /var/lib/homebridge
+sudo cp -r ~/.homebridge/persist /var/lib/homebridge
+sudo chmod -R 0777 /var/lib/homebridge
+sudo systemctl daemon-reload
+sudo systemctl enable homebridge
+sudo systemctl start homebridge
 ```
 
 ## Hardware Setup
