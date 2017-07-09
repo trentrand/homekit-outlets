@@ -6,7 +6,7 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var exec = require('gulp-exec');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
 var shell = require('gulp-shell');
 var util = require('gulp-util');
 var uglify = require('gulp-uglify');
@@ -20,7 +20,7 @@ var config = {
   src: './bridge/config.json',
   dest: homeDir + '/.homebridge/',
   filePath: this.dest + 'config.json'
-};
+}
 
 var accessories = {
   filename: ['homebridge-rf-outlet.js'],
