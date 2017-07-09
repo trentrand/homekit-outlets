@@ -1,5 +1,4 @@
 var fs = require('fs');
-var homeDir = require('os').homedir();
 
 // Gulp Plugins
 var gulp = require('gulp');
@@ -14,6 +13,7 @@ var uglify = require('gulp-uglify');
 var scripts = [];
 
 var isProduction = (process.env.NODE_ENV === 'production');
+var homeDir = isProduction ? '/root' : require('os').homedir();
 
 var config = {
   example: './bridge/accessories/homebridge-rf-outlet/config-example.json',
