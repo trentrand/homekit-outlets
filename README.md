@@ -79,7 +79,8 @@ Add one accessory to your `config.json` per each individual power outlet you'd l
 ```
 ## Mounting Pi to filesystem
 ```bash
-sshfs pi@homebridge.local:// /Mount -ovolname=Mount
+sudo mkdir ~/Server
+sshfs -o idmap=user pi@homebridge.local:/home/pi/developer ~/Server
 
 ```
 
