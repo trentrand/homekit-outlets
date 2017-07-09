@@ -16,6 +16,36 @@ sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
 ```
 5. Now that Node is installed, install homebridge by following the instructions listed on the following website, https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
 
+6. Setup homekit-outlets to run on startup by running,
+```
+sudo ln -fs /usr/bin/nodejs /usr/local/bin/node
+sudo touch /lib/systemd/system/homekit.service
+```
+
+
+Add the following content to `homekit.service` with,
+
+`sudo nano /lib/systemd/system/homekit.service`
+
+```
+[Unit]
+Description=HomeKit Outlet Server
+
+[Service]
+WorkingDirectory=/home/pi/developer/homekit-outlets
+ExecStart=/home/pi/.nvm/versions/node/v6.11.0/bin/npm start
+#Restart=on-failure
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=homekit-outlets
+User=root
+Group=root
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## Hardware Setup
 
 ## Install
