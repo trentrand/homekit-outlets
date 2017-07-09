@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var exec = require('gulp-exec');
 var rename = require("gulp-rename");
 var shell = require('gulp-shell');
+var util = require('gulp-util');
 var uglify = require('gulp-uglify');
 
 var scripts = [];
@@ -35,11 +36,13 @@ gulp.task('clean', ['stop-homebridge'], function() {
 });
 
 gulp.task('copy-config', ['clean'], function() {
+  util.log('copying config to ' + config.dest);
   return gulp.src(config.src)
     .pipe(gulp.dest(config.dest));
 });
 
 gulp.task('copy-accessories', ['clean'], function() {
+  util.log('copying accessories to ' + accessories.dest);
   return gulp.src(accessories.src)
     .pipe(rename(accessories.filename))
     .pipe(gulp.dest(accessories.dest));

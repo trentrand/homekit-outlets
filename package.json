@@ -37,6 +37,7 @@
     "gulp-shell": "^0.6.3",
     "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "typescript": "^2.3.4"
   }
 }
