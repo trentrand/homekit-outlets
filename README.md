@@ -16,7 +16,15 @@ sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
 ```
 5. Now that Node is installed, install homebridge by following the instructions listed on the following website, https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
 
-6. Setup homekit-outlets to run on startup by following these steps on your homebridge server -
+6. Clone homekit-outlets to your raspberry pi with,
+
+`git clone http://github.com/trentrand/homekit-outlets.git`
+
+7. Globally install the [homebridge-rf-outlet](https://github.com/trentrand/homebridge-rf-outlet) accessory plugin for Homebridge with,
+
+`sudo npm install -g homebridge-rf-outlet`
+
+8. Setup homekit-outlets to run on startup by following these steps on your homebridge server -
 
 Add the following content to `homebridge` with,
 
