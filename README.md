@@ -55,7 +55,7 @@ User=homebridge
 EnvironmentFile=/etc/default/homebridge
 # Adapt this to your specific setup (could be /usr/bin/homebridge)
 # See comments below for more information
-ExecStart=/home/pi/.nvm/versions/node/v6.11.0/bin/homebridge $HOMEBRIDGE_OPTS
+ExecStart=/usr/lib/node_modules/homebridge $HOMEBRIDGE_OPTS
 Restart=on-failure
 RestartSec=10
 KillMode=process
@@ -68,7 +68,7 @@ Then execute the following commands,
 ```
 sudo useradd -M --system homebridge
 sudo mkdir /var/lib/homebridge
-sudo cp -r ~/.homebridge/persist /var/lib/homebridge
+sudo cp -r ~/.homebridge/persist /var/lib/homebridge/persist
 sudo chmod -R 0777 /var/lib/homebridge
 sudo systemctl daemon-reload
 sudo systemctl enable homebridge
