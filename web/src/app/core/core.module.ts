@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { CoreRoutingModule } from './core-routing.module';
 
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -17,9 +18,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CoreRoutingModule
   ],
   declarations: [
+    NavigationBarComponent,
     PageNotFoundComponent
   ],
   exports: [
+    NavigationBarComponent
   ]
 })
 export class CoreModule { }
