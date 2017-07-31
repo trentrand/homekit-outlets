@@ -9,6 +9,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from "./dashboard.component";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ManageComponent } from './manage/manage.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { OverviewComponent } from './overview/overview.component';
     DashboardComponent,
     SidebarComponent,
     OverviewComponent,
+    ManageComponent,
   ],
   exports: [
     DashboardComponent
