@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  { path: '',   redirectTo: '/dashboard/overview', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

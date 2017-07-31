@@ -6,3 +6,12 @@ body {
   padding-top: 50px;
   color: #3a4250;
 }
+
+h1 {
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eee;
+  small {
+    font-size: 28px;
+  }
+}
