@@ -6,14 +6,18 @@ import { HttpModule } from '@angular/http';
 
 import { CoreRoutingModule } from './core-routing.module';
 
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
     HttpModule,
+    CoreRoutingModule
   ],
   declarations: [
+    PageNotFoundComponent
   ],
   exports: [
   ]
