@@ -11,6 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ManageComponent } from './manage/manage.component';
 import { ExportComponent } from './export/export.component';
+import { ConsoleComponent } from './console/console.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ExportComponent } from './export/export.component';
     OverviewComponent,
     ManageComponent,
     ExportComponent,
+    ConsoleComponent,
   ],
   exports: [
     DashboardComponent
