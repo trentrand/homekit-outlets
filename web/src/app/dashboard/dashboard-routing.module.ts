@@ -6,6 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { OverviewComponent } from './overview/overview.component';
 import { ManageComponent } from './manage/manage.component';
+import { ExportComponent } from './export/export.component';
 
 const routes: Routes = [
   { path: 'dashboard',   component: DashboardComponent,
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'overview', pathMatch: 'full' },
       { path: 'overview', component: OverviewComponent },
       { path: 'manage', component: ManageComponent },
+      { path: 'export', component: ExportComponent },
     ]
   }
 ];
