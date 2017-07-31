@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { DashboardComponent } from "./dashboard.component";
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { OverviewComponent } from './overview/overview.component';
   ],
   declarations: [
     DashboardComponent,
+    SidebarComponent,
     OverviewComponent,
   ],
   exports: [
