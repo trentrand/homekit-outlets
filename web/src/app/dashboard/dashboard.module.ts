@@ -12,6 +12,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { ManageComponent } from './manage/manage.component';
 import { ExportComponent } from './export/export.component';
 import { ConsoleComponent } from './console/console.component';
+import { LogsComponent } from './logs/logs.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { ConsoleComponent } from './console/console.component';
     ManageComponent,
     ExportComponent,
     ConsoleComponent,
+    LogsComponent
   ],
   exports: [
     DashboardComponent

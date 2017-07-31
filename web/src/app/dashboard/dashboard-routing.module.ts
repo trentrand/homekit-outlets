@@ -8,6 +8,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { ManageComponent } from './manage/manage.component';
 import { ExportComponent } from './export/export.component';
 import { ConsoleComponent } from './console/console.component';
+import { LogsComponent } from './logs/logs.component';
 
 const routes: Routes = [
   { path: 'dashboard',   component: DashboardComponent,
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'manage', component: ManageComponent },
       { path: 'export', component: ExportComponent },
       { path: 'console', component: ConsoleComponent },
+      { path: 'logs', component: LogsComponent }
     ]
   }
 ];
