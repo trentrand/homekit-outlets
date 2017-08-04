@@ -26,7 +26,7 @@ before_install:
   - npm update
 
 install:
-  - npm install
+  - cd ./web && npm install
 
 after_install:
   - npm rebuild node-sass
