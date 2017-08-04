@@ -1,4 +1,4 @@
-# HomeBridge Outlets [![Build Status](https://travis-ci.org/trentrand/HomeBridge Outlets.svg?branch=master)](https://travis-ci.org/trentrand/HomeBridge Outlets)
+# HomeBridge Outlets  [![Build Status](https://travis-ci.org/trentrand/homekit-outlets.svg?branch=master)](https://travis-ci.org/trentrand/homekit-outlets)
 __Website Files for Angular redesign of HomeBridge Outlets__
 
 ### Author
