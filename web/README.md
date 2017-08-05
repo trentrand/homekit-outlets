@@ -1,4 +1,4 @@
-# HomeBridge Outlets [![Build Status](https://travis-ci.org/trentrand/HomeBridge Outlets.svg?branch=master)](https://travis-ci.org/trentrand/HomeBridge Outlets)
+# HomeBridge Outlets  [![Build Status](https://travis-ci.org/trentrand/homekit-outlets.svg?branch=master)](https://travis-ci.org/trentrand/homekit-outlets)
 __Website Files for Angular redesign of HomeBridge Outlets__
 
 ### Author
@@ -8,6 +8,10 @@ Developed by Trent Rand
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Deployment Server
+
+Run `ng serve --prod --host=0.0.0.0 --disable-host-check` to deploy your home server. Navigate to `http://homebridge.local:4200/`.
 
 ## Code scaffolding
 
