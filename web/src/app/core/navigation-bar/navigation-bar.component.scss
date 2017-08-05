@@ -3,3 +3,14 @@ button {
     color: white;
   }
 }
+
+.next-up {
+  display: flex;
+  align-items: center;
+
+  & > a {
+    color: white;
+    padding-right: 10px;
+    font-weight: 100;
+  }
+}
