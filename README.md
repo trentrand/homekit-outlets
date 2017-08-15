@@ -1,5 +1,6 @@
 # HomeKit Controlled Outlet Switches
 > Self-contained HomeKit server for controlling wireless electrical outlets over radio frequency
+<img src="hardware.JPG" width="500">
 
 ## E2E Installation Guide:
 1. Install the Raspbian operting system on your raspberry pi (username: pi / password: raspberry) and plugin an ethernet cord from your Raspberry Pi to your router.
