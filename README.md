@@ -26,6 +26,10 @@ sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
 ```
 npm run-script install-globals
 npm install
+git clone git://git.drogon.net/wiringPi
+cd ./wiringPi
+sudo su
+./build
 ```
 
 8. Globally install the [homebridge-rf-outlet](https://github.com/trentrand/homebridge-rf-outlet) accessory plugin for Homebridge with,
