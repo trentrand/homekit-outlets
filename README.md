@@ -21,11 +21,18 @@ sudo update-alternatives --install "/usr/bin/npm" "npm" "/opt/node/bin/npm" 1
 
 `git clone http://github.com/trentrand/homekit-outlets.git`
 
-7. Globally install the [homebridge-rf-outlet](https://github.com/trentrand/homebridge-rf-outlet) accessory plugin for Homebridge with,
+7. Install global dependencies
+
+```
+npm run-script install-globals
+npm install
+```
+
+8. Globally install the [homebridge-rf-outlet](https://github.com/trentrand/homebridge-rf-outlet) accessory plugin for Homebridge with,
 
 `sudo npm install -g homebridge-rf-outlet`
 
-8. Setup homekit-outlets to run on startup by following these steps on your homebridge server -
+9. Setup homekit-outlets to run on startup by following these steps on your homebridge server -
 
 Add the following content to `homebridge` with,
 
@@ -75,18 +82,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable homebridge
 sudo systemctl start homebridge
 ```
-
-## Hardware Setup
-
-## Install
-
-Install global dependencies with
-
-`npm run-script install-globals`
-
-Then install your HomeKit outlets server with
-
-`npm install`
 
 ## Setup your configuration file
 
